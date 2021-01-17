@@ -17,7 +17,9 @@
     })
 
     function loadData(){
-        $.get('data.php')
+        $.get('data.php', function(data){
+            $('#content').html(data)
+        })
     }
 </script>
 </body>
