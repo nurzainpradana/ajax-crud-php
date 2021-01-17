@@ -48,14 +48,21 @@
                         success:function(){
                             loadData();
                         }
-                    })
-                })
+                    });
+                });
+                $('.updateData').click(function(e){
+                    e.preventDefault();
+                    $('[name=nama]').val($(this).attr('nama'));
+                    $('[name=alamat]').val($(this).attr('alamat'));
+                    $('form').attr('action',$(this).attr('href'));
+                });
             })
         }
         function resetForm(){
             // Membuat inout menjadi clear setelah submit
             $('[type=text]').val('');
             $('[name=nama]').focus();
+            $('form').attr('action','simpan.php');
         }
     </script>
 </body>
