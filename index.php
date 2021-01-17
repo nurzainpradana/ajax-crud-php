@@ -8,19 +8,25 @@
 </head>
 <body>
 
-<div id="content">
-
-</div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        loadData();
-    })
-
-    function loadData(){
-        $.get('data.php', function(data){
-            $('#content').html(data)
+    <form action="simpan.php" method="post">
+        <input type="text" name="nama" id="" placeholder="Nama Anda ..">
+        <input type="text" name="alamat" id="" placeholder="Alamat Anda ..">
+        <input type="submit" name="submti" value="Simpan">
+    </form>
+    <hr>
+    <div id="content">
+    
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            loadData();
         })
-    }
-</script>
+
+        function loadData(){
+            $.get('data.php', function(data){
+                $('#content').html(data)
+            })
+        }
+    </script>
 </body>
 </html>
