@@ -31,6 +31,7 @@
                     data: $(this).serialize(),
                     success : function() {
                         loadData();
+                        resetForm();
                     }
                 });
             })
@@ -39,7 +40,22 @@
         function loadData(){
             $.get('data.php', function(data){
                 $('#content').html(data)
+                $('.hapusData').click(function(e){
+                    e.preventDefault();
+                    $.ajax({
+                        type:'get',
+                        url:$(this).attr('href'),
+                        success:function(){
+                            loadData();
+                        }
+                    })
+                })
             })
+        }
+        function resetForm(){
+            // Membuat inout menjadi clear setelah submit
+            $('[type=text]').val('');
+            $('[name=nama]').focus();
         }
     </script>
 </body>
