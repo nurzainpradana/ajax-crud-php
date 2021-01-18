@@ -62,7 +62,7 @@
             // Membuat inout menjadi clear setelah submit
             $('[type=text]').val('');
             $('[name=nama]').focus();
-            $('form').attr('action','simpan.php');
+            $('form').attr('action','simpan.php ');
         }
     </script>
 </body>
